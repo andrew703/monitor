@@ -32,6 +32,9 @@
   console.error = (function(origin) {
     return function(errorlog) {
       clearTimer();
+      console.log('typeof(errorlog):', typeof(errorlog), errorlog.toString());
+      console.log('可以看到，第一个异常是个字符串，第二异常是个 object');
+      console.log('请问有没有什么方式 能够收集到每个异常的错误行数以及列数');
       pushError({
         type: ERROR_CONSOLE,
         des: errorlog
